@@ -39,15 +39,15 @@ get_header(); ?>
                     <div class="kratos-hentry kratos-post-inner clearfix">
                         <div class="kratos-post-content">
                             <div id="archives">
-                                <h2 class="title-h2" style="text-align:center;font-size:18pt"><?php _e('文章归档','moedog'); ?></h2>
-                                <p style="text-align:center"><span style="color:#999"><?php _e('当前共有','moedog');echo wp_count_posts()->publish;_e('篇公开日志，','moedog');echo wp_count_posts('page')->publish;_e('个公开页面。 (゜-゜)つロ 干杯~','moedog'); ?></span></p>
+                                <h2 class="title-h2" style="text-align:center;font-size:18pt"><?php _e('文章归档'); ?></h2>
+                                <p style="text-align:center"><span style="color:#999"><?php _e('当前共有');echo wp_count_posts()->publish;_e('篇公开日志，');echo wp_count_posts('page')->publish;_e('个公开页面。 (゜-゜)つロ 干杯~'); ?></span></p>
                             <hr/>
-                                <h4><?php _e('Tags','moedog'); ?></h4>
+                                <h4><?php _e('Tags'); ?></h4>
                                 <div class="arc-tag">
                                 <?php echo $arc_tags; ?>
                                 </div>
                             <hr/>
-                                <h4><?php _e('Archives','moedog'); ?></h4>
+                                <h4><?php _e('Archives'); ?></h4>
                                 <div id="posts" class="posts-collapse">
                                 <?php echo $output; ?>
                                 </div>
@@ -57,9 +57,9 @@ get_header(); ?>
                         <?php if(kratos_option('page_like_donate')||kratos_option('page_share')){ ?>
                         <footer class="kratos-entry-footer clearfix">
                             <div class="post-like-donate text-center clearfix" id="post-like-donate"><?php
-                                if(kratos_option('page_like_donate')) echo '<a href="javascript:;" class="Donate"><i class="fa fa-bitcoin"></i> '.__('打赏','moedog').'</a>';
+                                if(kratos_option('page_like_donate')) echo '<a href="javascript:;" class="Donate"><i class="fa fa-bitcoin"></i> '.__('打赏').'</a>';
                                 if(kratos_option('page_share')){
-                                    echo '<a href="javascript:;" class="Share"><i class="fa fa-share-alt"></i> '.__('分享','moedog').'</a>';
+                                    echo '<a href="javascript:;" class="Share"><i class="fa fa-share-alt"></i> '.__('分享').'</a>';
                                     require_once(get_template_directory().'/inc/share.php');
                                 } ?>
                             </div>

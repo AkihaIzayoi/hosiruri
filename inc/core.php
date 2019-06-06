@@ -17,14 +17,14 @@ if(!function_exists('optionsframework_init')){
 }
 function kratos_options_menu_filter($menu){
   $menu['mode'] = 'menu';
-  $menu['page_title'] = __('主题设置','moedog');
-  $menu['menu_title'] = __('主题设置','moedog');
+  $menu['page_title'] = __('主题设置');
+  $menu['menu_title'] = __('主题设置');
   $menu['menu_slug'] = 'kratos';
   return $menu;
 }
 add_filter('optionsframework_menu','kratos_options_menu_filter');
 //The menu navigation registration
-function kratos_register_nav_menu(){register_nav_menus(array('header_menu'=>__('顶部菜单','moedog')));}
+function kratos_register_nav_menu(){register_nav_menus(array('header_menu'=>__('顶部菜单')));}
 add_action('after_setup_theme','kratos_register_nav_menu');
 //Highlighting the active menu
 function kratos_active_menu_class($classes){
@@ -80,6 +80,7 @@ function kratos_theme_scripts(){
     $url1 = 'https://cdn.jsdelivr.net/gh/xb2016/kratos-pjax@'.KRATOS_VERSION;
     $url2 = get_bloginfo('template_directory');
     if(kratos_option('js_out')) $jsdir = $url1; else $jsdir = $url2;
+
     if(kratos_option('css_out')) $cssdir = $url1; else $cssdir = $url2;
     if(kratos_option('owo_out')) $owodir = $url1; else $owodir = $url2;
     if(kratos_option('fa_url')) $fadir = kratos_option('fa_url'); else $fadir = $url2.'/static/css/font-awesome.min.css';
@@ -223,7 +224,7 @@ function kratos_description(){
         if(get_the_excerpt()){echo get_the_excerpt();}
         else{global $post;$description = trim(str_replace(array("\r\n","\r","\n","　"," ")," ",str_replace("\"","'",strip_tags(do_shortcode($post->post_content)))));echo mb_substr($description,0,220,'utf-8');}
     }
-    elseif(is_search()){echo '“';the_search_query();global $wp_query;echo '”'.sprintf(__('为您找到结果 %s 个','moedog'),$wp_query->found_posts);}
+    elseif(is_search()){echo '“';the_search_query();global $wp_query;echo '”'.sprintf(__('为您找到结果 %s 个'),$wp_query->found_posts);}
     elseif(is_tag()){$description = strip_tags(tag_description());echo trim($description);}
     else{$description = strip_tags(term_description());echo trim($description);}
 }
@@ -297,11 +298,11 @@ function insert_last_login($login){
 }
 add_filter('manage_users_columns','add_user_additional_column');
 function add_user_additional_column($columns){
-    $columns['user_nickname'] = __('昵称','moedog');
-    $columns['user_url'] = __('网站','moedog');
-    $columns['reg_time'] = __('注册时间','moedog');
-    $columns['last_login'] = __('上次登录','moedog');
-    $columns['last_login_ip'] = __('登录IP','moedog');
+    $columns['user_nickname'] = __('昵称');
+    $columns['user_url'] = __('网站');
+    $columns['reg_time'] = __('注册时间');
+    $columns['last_login'] = __('上次登录');
+    $columns['last_login_ip'] = __('登录IP');
     unset($columns['name']);
     return $columns;
 }
@@ -371,7 +372,7 @@ function kratos_comment_callback(){
                 </cite>
             </div>
             <?php if('0'==$comment->comment_approved): ?>
-            <em class="comment-awaiting-moderation"><?php _e('您的评论正在等待审核。','moedog') ?></em>
+            <em class="comment-awaiting-moderation"><?php _e('您的评论正在等待审核。') ?></em>
             <br />
             <?php endif; ?>
             <div class="comment-meta commentmetadata">
@@ -450,7 +451,7 @@ function kratos_get_html_sitemap(){
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="description" content="<?php bloginfo('name'); ?>站点地图">
     <meta name="keywords" content="<?php bloginfo('name'); ?>,站点地图,sitemap">
-    <title><?php bloginfo('name'); ?> | <?php _e('站点地图','moedog'); ?></title>
+    <title><?php bloginfo('name'); ?> | <?php _e('站点地图'); ?></title>
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
     <style>
@@ -526,7 +527,7 @@ function kratos_get_html_sitemap(){
     <?php endif; ?>
 </div><!-- .container -->
 <footer class="page-footer">
-    <?php _e('最后更新于','moedog'); ?> <?php echo get_lastpostdate('blog'); ?>
+    <?php _e('最后更新于'); ?> <?php echo get_lastpostdate('blog'); ?>
     <!-- 本页基于 mk-sitemap 插件 - https://mkblog.cn/ -->
 </footer>
 </body>
@@ -559,16 +560,3 @@ function comment_author_link_window(){
     return $return;
 }
 add_filter('get_comment_author_link','comment_author_link_window');
-//Notice ***PLEASE DO NOT EDIT THIS 请不要修改此内容***
-function kratos_admin_notice(){
-    global $noticeinfo;
-    $noticeinfo = wp_remote_retrieve_body(wp_remote_get('https://api.fczbl.vip/kratos_notice/?v='.KRATOS_VERSION));
-    if(!is_wp_error($noticeinfo)&&$noticeinfo) $noticeinfo = '<style type="text/css">.about-description a{text-decoration:none}</style><div class="notice notice-info"><p class="about-description">'.$noticeinfo.'</p></div>';
-    if(kratos_option('kratos_notice')=='global'&&current_user_can('manage_options')) echo $noticeinfo;
-}
-function kratos_welcome_notice(){
-    global $noticeinfo;
-    if(current_user_can('manage_options')) echo $noticeinfo;
-}
-add_action('admin_notices','kratos_admin_notice');
-if(kratos_option('kratos_notice')=="welcome") add_action('welcome_panel','kratos_welcome_notice');

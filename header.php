@@ -1,11 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-     ____ _  __ __  __ __ __ ____
-    /  _// |/ // / / // //_// __ \
-   _/ / /    // /_/ // ,<  / /_/ /
-  /___//_/|_/ \____//_/|_| \____/
-
--->
 <html <?php language_attributes(); ?>>
   <head>
     <meta charset="<?php bloginfo('charset'); ?>">
