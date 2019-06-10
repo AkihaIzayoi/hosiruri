@@ -1,6 +1,6 @@
 <?php
 
-define('KRATOS_VERSION','0.4.0');
+define('HOSIRURI_VERSION','v0.1.6');
 
 require_once(get_template_directory().'/inc/core.php');
 require_once(get_template_directory().'/inc/shortcode.php');
