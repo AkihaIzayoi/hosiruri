@@ -15,7 +15,7 @@ function optionsframework_options(){
     $options[] = array(
         'name'=>__('站点图标'),
         'id'=>'site_ico',
-        'std'=>'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css',
+        'std'=>'https://cdn.jsdelivr.net/gh/AkihaIzayoi/hosiruri@'.HOSIRURI_VERSION.'/static/images/favicon.ico',
         'type'=>'upload');
     $options[] = array(
         'name'=>__('通知设置'),
@@ -66,7 +66,7 @@ function optionsframework_options(){
         'name'=>__('背景图片'),
         'desc'=>__('整个站点背景图片控制(背景类型选择为图片才有效)'),
         'id'=>'background_index_image',
-        'std'=>'/static/images/index_image.png',
+        'std'=>'https://cdn.jsdelivr.net/gh/AkihaIzayoi/hosiruri@'.HOSIRURI_VERSION.'/static/images/index_image.png',
         'type'=>'upload');
     $options[] = array(
         'name'=>__('主页布局'),
@@ -148,7 +148,7 @@ function optionsframework_options(){
         'name'=>__('自定义Font Awesome'),
         'desc'=>__('自定义Font Awesome 4.7字体库链接，留空将从本地加载'),
         'id'=>'fa_url',
-        'std'=>'/static/css/font-awesome.min.css',
+        'std'=>'https://cdn.jsdelivr.net/gh/AkihaIzayoi/hosiruri@'.HOSIRURI_VERSION.'/static/css/font-awesome.min.css',
         'type'=>'text');
     $options[] = array(
         'name'=>__('自定义jQuery'),
@@ -292,7 +292,7 @@ function optionsframework_options(){
     $options[] = array(
         'name'=>__('顶部图片'),
         'id'=>'background_image',
-        'std'=>'https://cdn.jsdelivr.net/gh/xb2016/kratos-pjax@'.HOSIRURI_VERSION.'/static/images/background.jpg',
+        'std'=>'https://cdn.jsdelivr.net/gh/AkihaIzayoi/hosiruri@'.HOSIRURI_VERSION.'/static/images/hosiruri.jpg',
         'type'=>'upload');
     $options[] = array(
         'name'=>__('移动端顶部图片(可留空)'),
