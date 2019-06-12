@@ -36,7 +36,7 @@
         </a>
     </div>
     <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-    <script type="text/javascript">
+    <script defer type="text/javascript">
     function share(obj){
         var qqShareURL="http://connect.qq.com/widget/shareqq/index.html?";
         var weiboShareURL="http://service.weibo.com/share/share.php?";

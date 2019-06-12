@@ -63,6 +63,12 @@ function optionsframework_options(){
         'std'=>'#f5f5f5',
         'type'=>'color');
     $options[] = array(
+        'name'=>__('彩带'),
+        'desc' =>__('是否启用彩带,整个站点背景颜色控制(背景类型选择为纯色才有效)'),
+        'id'=>'background_index_ribbon',
+        'std'=>'1',
+        'type'=>'checkbox');    
+    $options[] = array(
         'name'=>__('背景图片'),
         'desc'=>__('整个站点背景图片控制(背景类型选择为图片才有效)'),
         'id'=>'background_index_image',

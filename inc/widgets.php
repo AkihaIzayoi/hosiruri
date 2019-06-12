@@ -49,6 +49,9 @@ function timeago($ptime){
 }
 //string cut
 function kratos_string_cut($string, $sublen, $start = 0, $code = 'UTF-8') {
+    if($string == "") {
+        return "[暂不支持预览该类型，点击查看]";
+    }
     if($code == 'UTF-8') {
         $pa = "/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";
         preg_match_all($pa,$string,$t_string);
