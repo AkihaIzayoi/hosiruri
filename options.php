@@ -374,6 +374,12 @@ function optionsframework_options(){
         'std'=>'',
         'type'=>'text');
     $options[] = array(
+        'name'=>__('QQ'),
+        'desc'=>__('QQ号码'),
+        'id'=>'social_qq',
+        'std'=>'',
+        'type'=>'text');
+    $options[] = array(
         'name'=>__('Twitter'),
         'desc'=>__('连接前要带有 http:// 或者 https:// '),
         'id'=>'social_twitter',
