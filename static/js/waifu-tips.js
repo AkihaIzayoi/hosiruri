@@ -15,9 +15,6 @@ $('.waifu-tool .fa-drivers-license-o').click(function(){
         showMessage('我又回来了！',4000);
     }
 });
-$('.waifu-tool .fa-comments').click(function(){
-    showHitokoto();
-});
 $('.waifu-tool .fa-street-view').click(function (){
     if(model_p===22) loadlive2d('live2d',xb.thome+'/inc/model/api.php?p=33&model=rand'); else loadlive2d('live2d',xb.thome+'/inc/model/api.php?p=22&model=rand');
     showMessage('我的新衣服好看嘛',4000);
@@ -35,12 +32,9 @@ $('.waifu-tool .fa-close').click(function(){
     showMessage('愿你有一天能与重要的人重逢',2000);
     window.setTimeout(function(){$('.waifu').hide();},1000);
 });
-loadlive2d('live2d',xb.thome+'/inc/model/api.php?p=33&model=default');
-function showHitokoto(){
-    $.post("https://api.fczbl.vip/hitokoto/",function(result){
-        showMessage(result);
-    });
-}
+// loadlive2d('live2d',xb.thome+'/inc/model/api.php?p=33&model=default');
+loadlive2d('live2d',xb.thome+'/inc/model/suomi/model.json');
+
 function showMessage(a,b){
     if(b==null) b = 10000;
     jQuery(".waifu-tips").hide().stop();

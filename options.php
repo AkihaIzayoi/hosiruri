@@ -312,7 +312,7 @@ function optionsframework_options(){
     $options[] = array(
         'name'=>__('图片文字-2(可做站点描述)'),
         'id'=>'background_image_text2',
-        'std'=>'kagayaki',
+        'std'=>'A WordPress response theme',
         'type'=>'text');
     $options[] = array(
         'name'=>__('移动端菜单显示模式'),
