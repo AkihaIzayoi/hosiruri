@@ -1227,11 +1227,11 @@ msgstr ""
 "Upload your WeChat Pay QR code image, the image size must greater than 200px"
 
 #: options.php:254
-msgid "支付婊收款码"
+msgid "支付宝收款码"
 msgstr "AliPay"
 
 #: options.php:255
-msgid "上传你的支付婊收款二维码图片，图片尺寸要大于200px"
+msgid "上传你的支付宝收款二维码图片，图片尺寸要大于200px"
 msgstr ""
 "Upload your AliPay QR code image, the image size must greater than 200px"
 

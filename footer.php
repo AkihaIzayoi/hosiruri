@@ -11,8 +11,7 @@
                             </div>
                         </div>
                         <div class="cd-tool text-center">
-                            <div class="<?php if(kratos_option('cd_weixin')) echo 'gotop-box2 '; ?>gotop-box"><div class="gotop-btn"><span class="fa fa-chevron-up"></span></div></div>
-                            <?php if(kratos_option('cd_weixin')) echo '<div id="wechat-img" class="wechat-img"><span class="fa fa-weixin"></span><div id="wechat-pic"><img src="'.kratos_option('weixin_image').'"></div></div>'; ?>
+                            <div class="gotop-box"><div class="gotop-btn"><span class="fa fa-chevron-up"></span></div></div>
                             <div class="search-box">
                                 <span class="fa fa-search"></span>
                                 <form class="search-form" role="search" method="get" id="searchform" action="<?php echo home_url('/'); ?>">

@@ -578,9 +578,9 @@ a.comment-reply-link,a.comment-reply-login{text-decoration:none;padding:2px 5px;
 #respond .comment-notes,#respond .logged-in-as{margin:0 0 10px;color:#888}
 #respond .input-group-addon{padding:6px 8px}
 #respond .input-group-addon i{width:20px}
-#respond .comment .randow-background-1{background:url(../images/comment.png) right bottom no-repeat;}
-#respond .comment .randow-background-2{background:url(../images/comment2.png) right bottom no-repeat;}
-#respond .comment .randow-background-3{background:url(../images/comment3.png) right bottom no-repeat;}
+#respond .comment .randow-background-1{background:url(../images/comment.png) right bottom no-repeat;resize:vertical}
+#respond .comment .randow-background-2{background:url(../images/comment2.png) right bottom no-repeat;resize:vertical}
+#respond .comment .randow-background-3{background:url(../images/comment3.png) right bottom no-repeat;resize:vertical}
 #respond .form-control randow-background{box-shadow:none;background:0 0;border:1px solid #ccc;height:auto;font-size:14px;font-weight:300;border-radius:0;min-height:125px;resize:vertical}
 #respond .has-feedback{position:relative}
 #respond .has-feedback .form-control:not(:first-child){padding-right:30px}

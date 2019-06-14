@@ -36,7 +36,7 @@
         </a>
     </div>
     <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-    <script defer type="text/javascript">
+    <script type="text/javascript">
     function share(obj){
         var qqShareURL="http://connect.qq.com/widget/shareqq/index.html?";
         var weiboShareURL="http://service.weibo.com/share/share.php?";
@@ -64,11 +64,14 @@
         window.open(_URL);
     }
     jQuery(function () {
-        jQuery('.qrcode').qrcode({
+        // 等待js引入再生成
+        setTimeout(() => {
+            jQuery('.qrcode').qrcode({
             width   : 150,
             height  : 150,
             text	: "<?php the_permalink(); ?>"
         });
+        }, 200);
     });
     </script>
 </div>
