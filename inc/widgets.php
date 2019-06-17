@@ -218,6 +218,7 @@ class kratos_widget_about extends WP_Widget {
                     echo (!kratos_option('social_facebook'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_facebook').'"><i class="fa fa-facebook-official"></i></a>';
                     echo (!kratos_option('social_linkedin'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_linkedin').'"><i class="fa fa-linkedin-square"></i></a>';
                     echo (!kratos_option('social_github'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_github').'"><i class="fa fa-github"></i></a>'; 
+                    echo (!kratos_option('social_steam'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_steam').'"><i class="fa fa-steam"></i></a>';
                     echo (!kratos_option('social_qq'))?'':'<a target="_blank" rel="nofollow" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin='.kratos_option('social_qq').'"><i class="fa fa-qq"></i></a>';
                 ?>
             </p>
