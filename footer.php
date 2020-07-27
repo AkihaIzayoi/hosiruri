@@ -3,23 +3,15 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
-                                    <p class="kratos-social-icons"><?php
-                                        echo (!kratos_option('social_weibo'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_weibo').'"><i class="fa fa-weibo"></i></a>';
-                                        echo (!kratos_option('social_tweibo'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_tweibo').'"><i class="fa fa-tencent-weibo"></i></a>';
-                                        echo (!kratos_option('social_mail'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_mail').'"><i class="fa fa-envelope"></i></a>';
-                                        echo (!kratos_option('social_twitter'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_twitter').'"><i class="fa fa-twitter"></i></a>';
-                                        echo (!kratos_option('social_facebook'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_facebook').'"><i class="fa fa-facebook-official"></i></a>';
-                                        echo (!kratos_option('social_linkedin'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_linkedin').'"><i class="fa fa-linkedin-square"></i></a>';
-                                        echo (!kratos_option('social_github'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_github').'"><i class="fa fa-github"></i></a>'; ?>
-                                    </p>
-                                    <p> © <?php echo date('Y'); ?> <a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a>. All Rights Reserved. | <?php _e('已在风雨中度过','moedog'); ?> <span id="span_dt_dt">Loading...</span><br>Theme <a href="https://www.fczbl.vip/787.html" target="_blank" rel="nofollow">Kratos</a> Made by <a href="https://www.vtrois.com" target="_blank" rel="nofollow">Vtrois</a> Modified by <a href="https://www.fczbl.vip" target="_blank" rel="nofollow">Moedog</a><?php if(kratos_option('sitemap')) echo ' | <a href="'.get_option('home').'/sitemap.html" target="_blank">Sitemap</a>'; ?>
-                                    <?php if(kratos_option('icp_num')) echo '<br><a href="http://www.miitbeian.gov.cn/" rel="external nofollow" target="_blank">'.kratos_option('icp_num').'</a>';
+                                    <p style="font-size:12px"> © <?php echo date('Y'); ?> <a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a>. All Rights Reserved. | <?php _e('已在风雨中度过','moedog'); ?> <span id="span_dt_dt">Loading...</span><br>Theme <a href="https://moedog.org/787.html" target="_blank" rel="nofollow">Kratos</a> Made by <a href="https://www.vtrois.com" target="_blank" rel="nofollow">Vtrois</a> Modified by <a href="https://moedog.org" target="_blank" rel="nofollow">Moedog</a><?php if(kratos_option('sitemap')) echo ' | <a href="'.get_option('home').'/sitemap.html" target="_blank">Sitemap</a>'; ?>
+                                    <?php if(kratos_option('icp_num')) echo '<br><a href="http://beian.miit.gov.cn" rel="external nofollow" target="_blank">'.kratos_option('icp_num').'</a>';
                                           if(kratos_option('gov_num')) echo '<br><a href="'.kratos_option('gov_link').'" rel="external nofollow" target="_blank"><i class="govimg"></i>'.kratos_option('gov_num').'</a>'; ?>
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div class="cd-tool text-center">
+                            <?php if(kratos_option('site_girl')&&!wp_is_mobile()){ ?><div class="<?php if(kratos_option('cd_weixin')) echo 'waifu-btn2 '; ?>waifu-btn" title="Waifu"><span class="fa fa-venus"></span></div><?php } ?>
                             <div class="<?php if(kratos_option('cd_weixin')) echo 'gotop-box2 '; ?>gotop-box"><div class="gotop-btn"><span class="fa fa-chevron-up"></span></div></div>
                             <?php if(kratos_option('cd_weixin')) echo '<div id="wechat-img" class="wechat-img"><span class="fa fa-weixin"></span><div id="wechat-pic"><img src="'.kratos_option('weixin_image').'"></div></div>'; ?>
                             <div class="search-box">
@@ -56,6 +48,7 @@
                 </footer>
             </div>
         </div>
+        <?php if(kratos_option('background_mode')=='color' && kratos_option('background_index_ribbon')) { ?><script id="ribbon" zindex="-1" alpha="0.6" size="90">!function(){function a(a,b,c){return Number(a.getAttribute(b))||c}function p(){for(e.clearRect(0,0,g,h),j=[{x:0,y:.7*h+i},{x:0,y:.7*h-i}];j[1].x<g+i;)q(j[0],j[1])}function q(a,b){e.beginPath(),e.moveTo(a.x,a.y),e.lineTo(b.x,b.y);var c=b.x+(2*o()-.25)*i,d=r(b.y);e.lineTo(c,d),e.closePath(),l-=m/-50,e.fillStyle="#"+(127*n(l)+128<<16|127*n(l+m/3)+128<<8|127*n(l+2*(m/3))+128).toString(16),e.fill(),j[0]=j[1],j[1]={x:c,y:d}}function r(a){var b=a+(2*o()-1.1)*i;return b>h||0>b?r(a):b}var b,c,j,d,e,f,g,h,i,k,l,m,n,o;document.addEventListener("touchmove",function(a){a.preventDefault()}),b=document.getElementById("ribbon"),config={zindex:a(b,"zIndex",-1),alpha:a(b,"alpha",.6),ribbon_width:a(b,"size",90)},c=document.createElement("canvas"),c.style.cssText="position:fixed;top:0;left:0;z-index:"+config.zindex,document.getElementsByTagName("body")[0].appendChild(c),d=c,e=d.getContext("2d"),f=window.devicePixelRatio||1,g=window.innerWidth,h=window.innerHeight,i=config.ribbon_width,k=Math,l=0,m=2*k.PI,n=k.cos,o=k.random,d.width=g*f,d.height=h*f,e.scale(f,f),e.globalAlpha=config.alpha,document.onclick=p,document.ontouchstart=p,p()}();</script> <?php } ?>
         <?php wp_footer();if(kratos_option('script_tongji')||kratos_option('add_script')){ ?>
         <script type="text/javascript">
             <?php echo kratos_option('script_tongji');echo kratos_option('add_script'); ?>
