@@ -386,7 +386,31 @@ window.onload = function(){
     var now = new Date().getTime();
     var page_load_time = now-performance.timing.navigationStart;
     console.clear();
-    console.log('项目托管:https://github.com/xb2016/kratos-pjax');
-    console.log('%cwww.fczbl.vip','font-size:2em');
+    console.log('项目托管:');
+    // console.log('%cmoedog.org','font-size:2em');
     console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','background:#fff;color:#333;text-shadow:0 0 2px #eee,0 0 3px #eee,0 0 3px #eee,0 0 2px #eee,0 0 3px #eee;');
 };
+
+// sidebar display control
+var new_scroll_position = 0;
+var last_scroll_position;
+var header = document.getElementById("kratos-header-section");
+
+window.addEventListener('scroll', function(e) {
+    last_scroll_position = window.scrollY;
+
+    // Scrolling down
+    if (new_scroll_position < last_scroll_position && last_scroll_position > 180) {
+        // header.removeClass('slideDown').addClass('slideUp');
+        header.classList.remove("slideDown");
+        header.classList.add("slideUp");
+
+        // Scrolling up
+    } else if (new_scroll_position > last_scroll_position) {
+        // header.removeClass('slideUp').addClass('slideDown');
+        header.classList.remove("slideUp");
+        header.classList.add("slideDown");
+    }
+
+    new_scroll_position = last_scroll_position;
+});

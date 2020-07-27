@@ -206,6 +206,18 @@ class kratos_widget_about extends WP_Widget {
         </div>
         <div class="textwidget">
             <p class="text-center"><?php echo $profile; ?></p>
+            <p class="kratos-social-icons">
+                <?php
+                    echo (!kratos_option('social_weibo'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_weibo').'"><i class="fa fa-weibo"></i></a>';
+                    echo (!kratos_option('social_tweibo'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_tweibo').'"><i class="fa fa-tencent-weibo"></i></a>';
+                    echo (!kratos_option('social_mail'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_mail').'"><i class="fa fa-envelope"></i></a>';
+                    echo (!kratos_option('social_twitter'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_twitter').'"><i class="fa fa-twitter"></i></a>';
+                    echo (!kratos_option('social_facebook'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_facebook').'"><i class="fa fa-facebook-official"></i></a>';
+                    echo (!kratos_option('social_linkedin'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_linkedin').'"><i class="fa fa-linkedin-square"></i></a>';
+                    echo (!kratos_option('social_github'))?'':'<a target="_blank" rel="nofollow" href="'.kratos_option('social_github').'"><i class="fa fa-github"></i></a>'; 
+                    echo (!kratos_option('social_qq'))?'':'<a target="_blank" rel="nofollow" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin='.kratos_option('social_qq').'"><i class="fa fa-qq"></i></a>';
+                ?>
+            </p>
         </div><?php
     }
         echo $after_widget;
