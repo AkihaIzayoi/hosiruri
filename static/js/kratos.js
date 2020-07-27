@@ -176,8 +176,8 @@
                 target:document.getElementsByClassName('OwO')[0],
                 api:xb.thome+'/inc/OwO.json',
                 position:'down',
-                width:'90%',
-                maxHeight:'250px'
+                width:'80%',
+                maxHeight:'200px'
             });
         }
     }
