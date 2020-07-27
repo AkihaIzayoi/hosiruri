@@ -17,14 +17,14 @@ if(!function_exists('optionsframework_init')){
 }
 function kratos_options_menu_filter($menu){
   $menu['mode'] = 'menu';
-  $menu['page_title'] = __('主题设置','moedog');
-  $menu['menu_title'] = __('主题设置','moedog');
+  $menu['page_title'] = __('主题设置','hoshiruri');
+  $menu['menu_title'] = __('主题设置','hoshiruri');
   $menu['menu_slug'] = 'kratos';
   return $menu;
 }
 add_filter('optionsframework_menu','kratos_options_menu_filter');
 //The menu navigation registration
-function kratos_register_nav_menu(){register_nav_menus(array('header_menu'=>__('顶部菜单','moedog')));}
+function kratos_register_nav_menu(){register_nav_menus(array('header_menu'=>__('顶部菜单','hoshiruri')));}
 add_action('after_setup_theme','kratos_register_nav_menu');
 //Highlighting the active menu
 function kratos_active_menu_class($classes){
@@ -199,7 +199,7 @@ add_filter('page_css_class','my_css_attributes_filter',100,1);
 function my_css_attributes_filter($var){return is_array($var)?array_intersect($var,array('current-menu-item','current-post-ancestor','current-menu-ancestor','current-menu-parent')):'';}
 //Languages
 function kratos_theme_languages(){
-  load_theme_textdomain('moedog',get_template_directory().'/languages');
+  load_theme_textdomain('hoshiruri',get_template_directory().'/languages');
 }
 add_action('after_setup_theme','kratos_theme_languages');
 //Add article type
@@ -223,7 +223,7 @@ function kratos_description(){
         if(has_excerpt() && get_the_excerpt()){echo get_the_excerpt();}
         else{global $post;$description = trim(str_replace(array("\r\n","\r","\n","　"," ")," ",str_replace("\"","'",strip_tags(do_shortcode($post->post_content)))));echo mb_substr($description,0,220,'utf-8');}
     }
-    elseif(is_search()){echo '“';the_search_query();global $wp_query;echo '”'.sprintf(__('为您找到结果 %s 个','moedog'),$wp_query->found_posts);}
+    elseif(is_search()){echo '“';the_search_query();global $wp_query;echo '”'.sprintf(__('为您找到结果 %s 个','hoshiruri'),$wp_query->found_posts);}
     elseif(is_tag()){$description = strip_tags(tag_description());echo trim($description);}
     else{$description = strip_tags(term_description());echo trim($description);}
 }
@@ -297,11 +297,11 @@ function insert_last_login($login){
 }
 add_filter('manage_users_columns','add_user_additional_column');
 function add_user_additional_column($columns){
-    $columns['user_nickname'] = __('昵称','moedog');
-    $columns['user_url'] = __('网站','moedog');
-    $columns['reg_time'] = __('注册时间','moedog');
-    $columns['last_login'] = __('上次登录','moedog');
-    $columns['last_login_ip'] = __('登录IP','moedog');
+    $columns['user_nickname'] = __('昵称','hoshiruri');
+    $columns['user_url'] = __('网站','hoshiruri');
+    $columns['reg_time'] = __('注册时间','hoshiruri');
+    $columns['last_login'] = __('上次登录','hoshiruri');
+    $columns['last_login_ip'] = __('登录IP','hoshiruri');
     unset($columns['name']);
     return $columns;
 }
@@ -350,7 +350,7 @@ function kratos_comment_err($a){
 }
 function spam_protection($commentdata){
     if(!is_user_logged_in()){
-        if($_POST['co_num1']+$_POST['co_num2']-3!=$_POST['code']) kratos_comment_err(__('验证码错误','moedog'));
+        if($_POST['co_num1']+$_POST['co_num2']-3!=$_POST['code']) kratos_comment_err(__('验证码错误','hoshiruri'));
     }
     return $commentdata;
 }
@@ -377,7 +377,7 @@ function kratos_comment_callback(){
                 </cite>
             </div>
             <?php if('0'==$comment->comment_approved): ?>
-            <em class="comment-awaiting-moderation"><?php _e('您的评论正在等待审核。','moedog') ?></em>
+            <em class="comment-awaiting-moderation"><?php _e('您的评论正在等待审核。','hoshiruri') ?></em>
             <br />
             <?php endif; ?>
             <div class="comment-meta commentmetadata">
@@ -456,7 +456,7 @@ function kratos_get_html_sitemap(){
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="description" content="<?php bloginfo('name'); ?>站点地图">
     <meta name="keywords" content="<?php bloginfo('name'); ?>,站点地图,sitemap">
-    <title><?php bloginfo('name'); ?> | <?php _e('站点地图','moedog'); ?></title>
+    <title><?php bloginfo('name'); ?> | <?php _e('站点地图','hoshiruri'); ?></title>
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
     <style>
@@ -532,7 +532,7 @@ function kratos_get_html_sitemap(){
     <?php endif; ?>
 </div><!-- .container -->
 <footer class="page-footer">
-    <?php _e('最后更新于','moedog'); ?> <?php echo get_lastpostdate('blog'); ?>
+    <?php _e('最后更新于','hoshiruri'); ?> <?php echo get_lastpostdate('blog'); ?>
     <!-- 本页基于 mk-sitemap 插件 - https://mkblog.cn/ -->
 </footer>
 </body>

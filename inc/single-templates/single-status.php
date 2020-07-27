@@ -13,7 +13,7 @@
             <i class="fa fa-refresh"></i>
                 <div class="kratos-status-inner">
                     <header><?php the_content() ?></header>
-                    <footer><?php echo get_the_date();echo get_the_date(' H:i'); ?> • <?php comments_number('0','1','%');_e('条评论','moedog'); ?> • <?php echo kratos_get_post_views();_e('次阅读','moedog'); ?></footer>
+                    <footer><?php echo get_the_date();echo get_the_date(' H:i'); ?> • <?php comments_number('0','1','%');_e('条评论','hoshiruri'); ?> • <?php echo kratos_get_post_views();_e('次阅读','hoshiruri'); ?></footer>
                 </div>
             </div>
         </div>
@@ -22,13 +22,13 @@
             $prev_post = get_previous_post();
             if(!empty($prev_post)){ ?>
             <div class="nav-previous clearfix">
-                <a title="<?php echo $prev_post->post_title;?>" href="<?php echo get_permalink($prev_post->ID); ?>">&lt; <?php _e('上一篇','moedog'); ?></a>
+                <a title="<?php echo $prev_post->post_title;?>" href="<?php echo get_permalink($prev_post->ID); ?>">&lt; <?php _e('上一篇','hoshiruri'); ?></a>
             </div>
             <?php }
             $next_post = get_next_post();
             if(!empty($next_post)){ ?>
             <div class="nav-next">
-                <a title="<?php echo $next_post->post_title; ?>" href="<?php echo get_permalink($next_post->ID); ?>"><?php _e('下一篇','moedog'); ?> &gt;</a>
+                <a title="<?php echo $next_post->post_title; ?>" href="<?php echo get_permalink($next_post->ID); ?>"><?php _e('下一篇','hoshiruri'); ?> &gt;</a>
             </div>
             <?php } ?>
         </nav>

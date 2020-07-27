@@ -18,13 +18,11 @@
             <div class="text">
                 <h1>404</h1>
                 <h2>Not Found</h2>
-                <p><?php _e('欸？我的萝莉怎么不见了？！','moedog'); ?></p>
+                <p><?php _e('欸？我的萝莉怎么不见了？！','hoshiruri'); ?></p>
             </div>
         </div>
         <div class="footer">
-            <br> © <script>document.write(new Date().getFullYear())</script> <a href="https://prprpr.love" target="_blank">MOEDOG</a>
-            <script src="https://api.fczbl.vip/hitokoto/?charset=utf-8&encode=js"></script>
-            <p id="hitokoto"><script>hitokoto()</script></p>
+        <br> © <script>document.write(new Date().getFullYear())</script> <a href="<?php echo home_url(); ?>" target="_blank">hoshiruri</a>
         </div>
     </body>
 </html>

@@ -1,9 +1,9 @@
 <p align="center">
-<img src="https://img.moedog.org/images/2019/08/21/kratos1.jpg" alt="KRATOS"/>
+<img src="https://img.hoshiruri.org/images/2019/08/21/kratos1.jpg" alt="KRATOS"/>
 </p>
 
 <p align="center">
-<a href="https://moedog.org"><img alt="Author" src="https://img.shields.io/badge/Author-Moedog-red.svg?style=flat-square"/></a>
+<a href="https://hoshiruri.org"><img alt="Author" src="https://img.shields.io/badge/Author-hoshiruri-red.svg?style=flat-square"/></a>
 <a href="https://github.com/xb2016/kratos-pjax/releases"><img alt="Version" src="https://img.shields.io/github/release/xb2016/kratos-pjax.svg?style=flat-square"/></a>
 <img alt="License" src="https://img.shields.io/github/license/xb2016/kratos-pjax.svg?style=flat-square"/>
 </p>
@@ -25,7 +25,7 @@ Star this project please, thank you!
 ## Supports
 
 **Docs**
-- [https://moedog.org/787.html](https://moedog.org/787.html)
+- [https://hoshiruri.org/787.html](https://hoshiruri.org/787.html)
 
 **Suggestions and BUG report**
 - [https://github.com/xb2016/kratos-pjax/issues](https://github.com/xb2016/kratos-pjax/issues)
@@ -43,8 +43,8 @@ We encourage everyone to help with localization. The following is how to do:
 4. Make a Pull Request
 
 - **Translators**
-  - **zh_CN** [Moedog](https://github.com/xb2016)
-  - **en_US** [Moedog](https://github.com/xb2016), [hifocus](https://github.com/hifocus)
+  - **zh_CN** [hoshiruri](https://github.com/xb2016)
+  - **en_US** [hoshiruri](https://github.com/xb2016), [hifocus](https://github.com/hifocus)
   - **ru_RU** [JuniorDEV](https://github.com/jun-dev)
   - **zh_TW** [RexTg](https://github.com/rexx0520)
 
@@ -75,6 +75,6 @@ I accept donations through: Alipay / Wechat Pay / QQ Pay , thank you!
 
 ## Author
 
-**Kratos-pjax** © [Vtrois](https://github.com/Vtrois), [Moedog](https://github.com/xb2016), Released under the [GPL-3.0](./LICENSE) License.<br>
+**Kratos-pjax** © [Vtrois](https://github.com/Vtrois), [hoshiruri](https://github.com/xb2016), Released under the [GPL-3.0](./LICENSE) License.<br>
 
-> Blog [moedog.org](https://moedog.org) · GitHub [@xb2016](https://github.com/xb2016) · Twitter [@moesdog](https://twitter.com/moesdog) · Telegram [@xb2016](https://t.me/xb2016)
+> Blog [hoshiruri.org](https://hoshiruri.org) · GitHub [@xb2016](https://github.com/xb2016) · Twitter [@moesdog](https://twitter.com/moesdog) · Telegram [@xb2016](https://t.me/xb2016)

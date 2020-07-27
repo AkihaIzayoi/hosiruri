@@ -38,14 +38,14 @@ add_shortcode('music','wymusic');
 function bdbtn($atts,$content=null,$code=""){
     $return = '<a class="downbtn" href="';
     $return .= $content;
-    $return .= '" target="_blank"><i class="fa fa-download"></i> '.__('本地下载','moedog').'</a>';
+    $return .= '" target="_blank"><i class="fa fa-download"></i> '.__('本地下载','hoshiruri').'</a>';
     return $return;
 }
 add_shortcode('bdbtn','bdbtn');
 function ypbtn($atts,$content=null,$code=""){
     $return = '<a class="downbtn downcloud" href="';
     $return .= $content;
-    $return .= '" target="_blank"><i class="fa fa-cloud-download"></i> '.__('云盘下载','moedog').'</a>';
+    $return .= '" target="_blank"><i class="fa fa-cloud-download"></i> '.__('云盘下载','hoshiruri').'</a>';
     return $return;
 }
 add_shortcode('ypbtn','ypbtn');
@@ -78,7 +78,7 @@ function striped($atts,$content=null,$code=""){
 }
 add_shortcode('striped','striped');
 function xcollapse($atts,$content=null,$code=""){
-    extract(shortcode_atts(array("title"=>__('标题内容','moedog')),$atts));
+    extract(shortcode_atts(array("title"=>__('标题内容','hoshiruri')),$atts));
     $return = '<div class="xControl"><div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><h5>';
     $return .= $title;
     $return .= '</h5></div><div class="xContent"><div class="inner">';
@@ -98,21 +98,21 @@ function hide($atts,$content=null,$code=""){
             global $id;
             $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_author_email = '".$email."' and comment_post_id='".$id."'and comment_approved = '1'");
             }
-        if(!$comments) $content = '<div class="hide_notice">'.sprintf(__('抱歉，只有<a href="%s" rel="nofollow">登录</a>并在本文发表评论才能阅读隐藏内容','moedog'),wp_login_url(get_permalink())).'</div>';
+        if(!$comments) $content = '<div class="hide_notice">'.sprintf(__('抱歉，只有<a href="%s" rel="nofollow">登录</a>并在本文发表评论才能阅读隐藏内容','hoshiruri'),wp_login_url(get_permalink())).'</div>';
     }else{
         if($email){
             global $wpdb;
             global $id;
             $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_author_email = '".$email."' and comment_approved = '1'");
         }
-        if(!$comments) $content = '<div class="hide_notice">'.sprintf(__('抱歉，只有<a href="%s" rel="nofollow">登录</a>并在本站任一文章发表评论才能阅读隐藏内容','moedog'),wp_login_url(get_permalink())).'</div>';
+        if(!$comments) $content = '<div class="hide_notice">'.sprintf(__('抱歉，只有<a href="%s" rel="nofollow">登录</a>并在本站任一文章发表评论才能阅读隐藏内容','hoshiruri'),wp_login_url(get_permalink())).'</div>';
     }
-    if($comments) $content = '<div class="unhide"><div class="info">'.__('以下为隐藏内容：','moedog').'</div>'.$content.'</div>';
+    if($comments) $content = '<div class="unhide"><div class="info">'.__('以下为隐藏内容：','hoshiruri').'</div>'.$content.'</div>';
     return $content;
 }
 add_shortcode('hide','hide');
 function successbox($atts,$content=null,$code=""){
-    extract(shortcode_atts(array("title"=>__('标题内容','moedog')),$atts));
+    extract(shortcode_atts(array("title"=>__('标题内容','hoshiruri')),$atts));
     $return = '<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title">';
     $return .= $title;
     $return .= '</h3></div><div class="panel-body">';
@@ -122,7 +122,7 @@ function successbox($atts,$content=null,$code=""){
 }
 add_shortcode('successbox','successbox');
 function infobox($atts,$content=null,$code=""){
-    extract(shortcode_atts(array("title"=>__('标题内容','moedog')),$atts));
+    extract(shortcode_atts(array("title"=>__('标题内容','hoshiruri')),$atts));
     $return = '<div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">';
     $return .= $title;
     $return .= '</h3></div><div class="panel-body">';
@@ -132,7 +132,7 @@ function infobox($atts,$content=null,$code=""){
 }
 add_shortcode('infobox','infobox');
 function warningbox($atts,$content=null,$code=""){
-    extract(shortcode_atts(array("title"=>__('标题内容','moedog')),$atts));
+    extract(shortcode_atts(array("title"=>__('标题内容','hoshiruri')),$atts));
     $return = '<div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title">';
     $return .= $title;
     $return .= '</h3></div><div class="panel-body">';
@@ -142,7 +142,7 @@ function warningbox($atts,$content=null,$code=""){
 }
 add_shortcode('warningbox','warningbox');
 function dangerbox($atts,$content=null,$code=""){
-    extract(shortcode_atts(array("title"=>__('标题内容','moedog')),$atts));
+    extract(shortcode_atts(array("title"=>__('标题内容','hoshiruri')),$atts));
     $return = '<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title">';
     $return .= $title;
     $return .= '</h3></div><div class="panel-body">';
@@ -292,7 +292,7 @@ function fa_get_wpsmiliestrans(){
 }
 add_action('media_buttons_context','fa_smilies_custom_button');
 function fa_smilies_custom_button($context){
-    $context .= '<style>.smilies-wrap{background:#fff;border: 1px solid #ccc;box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.24);padding: 10px;position: absolute;top: 60px;width: 380px;display:none}.smilies-wrap img{height:24px;width:24px;cursor:pointer;margin-bottom:5px} .is-active.smilies-wrap{display:block}</style><a id="REPLACE-media-button" style="position:relative" class="button REPLACE-smilies add_smilies" title="'.__('添加表情','moedog').'" data-editor="content" href="javascript:;">'.__('添加表情','moedog').'</a><div class="smilies-wrap">'. fa_get_wpsmiliestrans() .'</div><script>jQuery(document).ready(function(){jQuery(document).on("click", ".REPLACE-smilies",function() { if(jQuery(".smilies-wrap").hasClass("is-active")){jQuery(".smilies-wrap").removeClass("is-active");}else{jQuery(".smilies-wrap").addClass("is-active");}});jQuery(document).on("click", ".add-smily",function() { send_to_editor(" " + jQuery(this).data("smilies") + " ");jQuery(".smilies-wrap").removeClass("is-active");return false;});});</script>';
+    $context .= '<style>.smilies-wrap{background:#fff;border: 1px solid #ccc;box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.24);padding: 10px;position: absolute;top: 60px;width: 380px;display:none}.smilies-wrap img{height:24px;width:24px;cursor:pointer;margin-bottom:5px} .is-active.smilies-wrap{display:block}</style><a id="REPLACE-media-button" style="position:relative" class="button REPLACE-smilies add_smilies" title="'.__('添加表情','hoshiruri').'" data-editor="content" href="javascript:;">'.__('添加表情','hoshiruri').'</a><div class="smilies-wrap">'. fa_get_wpsmiliestrans() .'</div><script>jQuery(document).ready(function(){jQuery(document).on("click", ".REPLACE-smilies",function() { if(jQuery(".smilies-wrap").hasClass("is-active")){jQuery(".smilies-wrap").removeClass("is-active");}else{jQuery(".smilies-wrap").addClass("is-active");}});jQuery(document).on("click", ".add-smily",function() { send_to_editor(" " + jQuery(this).data("smilies") + " ");jQuery(".smilies-wrap").removeClass("is-active");return false;});});</script>';
     return $context;
 }
 function appthemes_add_quicktags(){ ?>
@@ -300,23 +300,23 @@ function appthemes_add_quicktags(){ ?>
 try{
 QTags.addButton( 'pre', 'pre', '<pre>\n', '\n</pre>' );
 QTags.addButton( 'hr', 'hr', '\n\n<hr />\n\n', '' );
-QTags.addButton( '<?php _e('代码高亮','moedog'); ?>', '<?php _e('代码高亮','moedog'); ?>', '<pre class="hl"><code class="">', '</code></pre>' );
-QTags.addButton( '<?php _e('内容标题','moedog'); ?>', '<?php _e('内容标题','moedog'); ?>', '[title]', '[/title]' );
-QTags.addButton( '<?php _e('蓝色字体','moedog'); ?>', '<?php _e('蓝色字体','moedog'); ?>', '<span style="color: #0000ff;">', '</span>' );
-QTags.addButton( '<?php _e('红色字体','moedog'); ?>', '<?php _e('红色字体','moedog'); ?>', '<span style="color: #ff0000;">', '</span>' );
-QTags.addButton( '<?php _e('展开/收缩','moedog'); ?>', '<?php _e('展开/收缩','moedog'); ?>', '[collapse title="<?php _e('标题内容','moedog'); ?>"]', '[/collapse]' );
-QTags.addButton( '<?php _e('回复可见','moedog'); ?>', '<?php _e('回复可见','moedog'); ?>', '[hide reply_to_this="true"]', '[/hide]' );
-QTags.addButton( '<?php _e('本地下载','moedog'); ?>', '<?php _e('本地下载','moedog'); ?>', '[bdbtn]', '[/bdbtn]' );
-QTags.addButton( '<?php _e('云盘下载','moedog'); ?>', '<?php _e('云盘下载','moedog'); ?>', '[ypbtn]', '[/ypbtn]' );
-QTags.addButton( '<?php _e('网易云音乐','moedog'); ?>', '<?php _e('网易云音乐','moedog'); ?>', '[music autoplay="0"]', '[/music]' );
-QTags.addButton( '<?php _e('绿色背景栏','moedog'); ?>', '<?php _e('绿色背景栏','moedog'); ?>', '[success]', '[/success]' );
-QTags.addButton( '<?php _e('蓝色背景栏','moedog'); ?>', '<?php _e('蓝色背景栏','moedog'); ?>', '[info]', '[/info]' );
-QTags.addButton( '<?php _e('黄色背景栏','moedog'); ?>', '<?php _e('黄色背景栏','moedog'); ?>', '[warning]', '[/warning]' );
-QTags.addButton( '<?php _e('红色背景栏','moedog'); ?>', '<?php _e('红色背景栏','moedog'); ?>', '[danger]', '[/danger]' );
-QTags.addButton( '<?php _e('绿色面板','moedog'); ?>', '<?php _e('绿色面板','moedog'); ?>', '[successbox title="<?php _e('标题内容','moedog'); ?>"]', '[/successbox]' );
-QTags.addButton( '<?php _e('蓝色面板','moedog'); ?>', '<?php _e('蓝色面板','moedog'); ?>', '[infobox title="<?php _e('标题内容','moedog'); ?>"]', '[/infobox]' );
-QTags.addButton( '<?php _e('黄色面板','moedog'); ?>', '<?php _e('黄色面板','moedog'); ?>', '[warningbox title="<?php _e('标题内容','moedog'); ?>"]', '[/warningbox]' );
-QTags.addButton( '<?php _e('红色面板','moedog'); ?>', '<?php _e('红色面板','moedog'); ?>', '[dangerbox title="<?php _e('标题内容','moedog'); ?>"]', '[/dangerbox]' );
+QTags.addButton( '<?php _e('代码高亮','hoshiruri'); ?>', '<?php _e('代码高亮','hoshiruri'); ?>', '<pre class="hl"><code class="">', '</code></pre>' );
+QTags.addButton( '<?php _e('内容标题','hoshiruri'); ?>', '<?php _e('内容标题','hoshiruri'); ?>', '[title]', '[/title]' );
+QTags.addButton( '<?php _e('蓝色字体','hoshiruri'); ?>', '<?php _e('蓝色字体','hoshiruri'); ?>', '<span style="color: #0000ff;">', '</span>' );
+QTags.addButton( '<?php _e('红色字体','hoshiruri'); ?>', '<?php _e('红色字体','hoshiruri'); ?>', '<span style="color: #ff0000;">', '</span>' );
+QTags.addButton( '<?php _e('展开/收缩','hoshiruri'); ?>', '<?php _e('展开/收缩','hoshiruri'); ?>', '[collapse title="<?php _e('标题内容','hoshiruri'); ?>"]', '[/collapse]' );
+QTags.addButton( '<?php _e('回复可见','hoshiruri'); ?>', '<?php _e('回复可见','hoshiruri'); ?>', '[hide reply_to_this="true"]', '[/hide]' );
+QTags.addButton( '<?php _e('本地下载','hoshiruri'); ?>', '<?php _e('本地下载','hoshiruri'); ?>', '[bdbtn]', '[/bdbtn]' );
+QTags.addButton( '<?php _e('云盘下载','hoshiruri'); ?>', '<?php _e('云盘下载','hoshiruri'); ?>', '[ypbtn]', '[/ypbtn]' );
+QTags.addButton( '<?php _e('网易云音乐','hoshiruri'); ?>', '<?php _e('网易云音乐','hoshiruri'); ?>', '[music autoplay="0"]', '[/music]' );
+QTags.addButton( '<?php _e('绿色背景栏','hoshiruri'); ?>', '<?php _e('绿色背景栏','hoshiruri'); ?>', '[success]', '[/success]' );
+QTags.addButton( '<?php _e('蓝色背景栏','hoshiruri'); ?>', '<?php _e('蓝色背景栏','hoshiruri'); ?>', '[info]', '[/info]' );
+QTags.addButton( '<?php _e('黄色背景栏','hoshiruri'); ?>', '<?php _e('黄色背景栏','hoshiruri'); ?>', '[warning]', '[/warning]' );
+QTags.addButton( '<?php _e('红色背景栏','hoshiruri'); ?>', '<?php _e('红色背景栏','hoshiruri'); ?>', '[danger]', '[/danger]' );
+QTags.addButton( '<?php _e('绿色面板','hoshiruri'); ?>', '<?php _e('绿色面板','hoshiruri'); ?>', '[successbox title="<?php _e('标题内容','hoshiruri'); ?>"]', '[/successbox]' );
+QTags.addButton( '<?php _e('蓝色面板','hoshiruri'); ?>', '<?php _e('蓝色面板','hoshiruri'); ?>', '[infobox title="<?php _e('标题内容','hoshiruri'); ?>"]', '[/infobox]' );
+QTags.addButton( '<?php _e('黄色面板','hoshiruri'); ?>', '<?php _e('黄色面板','hoshiruri'); ?>', '[warningbox title="<?php _e('标题内容','hoshiruri'); ?>"]', '[/warningbox]' );
+QTags.addButton( '<?php _e('红色面板','hoshiruri'); ?>', '<?php _e('红色面板','hoshiruri'); ?>', '[dangerbox title="<?php _e('标题内容','hoshiruri'); ?>"]', '[/dangerbox]' );
 }catch(err){}
 </script>
 <?php

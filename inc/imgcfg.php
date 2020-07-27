@@ -107,8 +107,8 @@ add_action('admin_post_add_external_media_without_import','admin_post_add_extern
 function add_submenu(){
     add_submenu_page(
         'upload.php',
-        __('从URL添加','moedog'),
-        __('从URL添加','moedog'),
+        __('从URL添加','hoshiruri'),
+        __('从URL添加','hoshiruri'),
         'manage_options',
         'add-from-url',
         'print_submenu_page'
@@ -119,13 +119,13 @@ function post_upload_ui(){
     wp_enqueue_script('emwi',get_template_directory_uri().'/inc/theme-options/js/media.js');
     $media_library_mode = get_user_option('media_library_mode',get_current_user_id()); ?>
     <div id="emwi-in-upload-ui">
-      <div class="row1"><?php _e('或','moedog'); ?></div>
+      <div class="row1"><?php _e('或','hoshiruri'); ?></div>
       <div class="row2">
         <?php if('grid' === $media_library_mode): ?>
-          <button id="emwi-show" class="button button-large"><?php _e('从URL导入','moedog'); ?></button>
+          <button id="emwi-show" class="button button-large"><?php _e('从URL导入','hoshiruri'); ?></button>
           <?php print_media_new_panel( true ); ?>
         <?php else : ?>
-          <a class="button button-large" href="<?php echo esc_url(admin_url('/upload.php?page=add-from-url')); ?>"><?php _e('从URL导入','moedog'); ?></a>
+          <a class="button button-large" href="<?php echo esc_url(admin_url('/upload.php?page=add-from-url')); ?>"><?php _e('从URL导入','hoshiruri'); ?></a>
         <?php endif; ?>
       </div>
     </div><?php
@@ -140,29 +140,29 @@ function print_media_new_panel($is_in_upload_ui){
     wp_enqueue_script('emwi',get_template_directory_uri().'/inc/theme-options/js/media.js'); ?>
     <div id="emwi-media-new-panel" <?php if($is_in_upload_ui): ?>style="display:none"<?php endif; ?>>
       <div class="url-row">
-        <label><?php _e('从URL添加媒体项目','moedog'); ?></label>
+        <label><?php _e('从URL添加媒体项目','hoshiruri'); ?></label>
         <span id="emwi-url-input-wrapper">
           <input id="emwi-url" name="url" type="url" required placeholder="Image URL" value="<?php echo esc_url($_GET['url']); ?>">
         </span>
       </div>
       <div id="emwi-hidden" <?php if($is_in_upload_ui||empty($_GET['error'])): ?>style="display: none"<?php endif; ?>>
-        <div><span id="emwi-error"><?php echo esc_html($_GET['error']); ?></span><?php _e('请手动指定图像大小与格式','moedog'); ?></div>
+        <div><span id="emwi-error"><?php echo esc_html($_GET['error']); ?></span><?php _e('请手动指定图像大小与格式','hoshiruri'); ?></div>
         <div id="emwi-properties">
-          <label><?php _e('宽','moedog'); ?></label>
+          <label><?php _e('宽','hoshiruri'); ?></label>
           <input id="emwi-width" name="width" type="number" value="<?php echo esc_html($_GET['width']); ?>">
-          <label><?php _e('高','moedog'); ?></label>
+          <label><?php _e('高','hoshiruri'); ?></label>
           <input id="emwi-height" name="height" type="number" value="<?php echo esc_html($_GET['height']); ?>">
-          <label><?php _e('MIME类型','moedog'); ?></label>
+          <label><?php _e('MIME类型','hoshiruri'); ?></label>
           <input id="emwi-mime-type" name="mime-type" type="text" value="<?php echo esc_html($_GET['mime-type']); ?>">
         </div>
       </div>
       <div id="emwi-buttons-row">
         <input type="hidden" name="action" value="add_external_media_without_import">
         <span class="spinner"></span>
-        <input type="button" id="emwi-clear" class="button" value="<?php _e('清除','moedog'); ?>">
-        <input type="submit" id="emwi-add" class="button button-primary" value="<?php _e('添加','moedog'); ?>">
+        <input type="button" id="emwi-clear" class="button" value="<?php _e('清除','hoshiruri'); ?>">
+        <input type="submit" id="emwi-add" class="button button-primary" value="<?php _e('添加','hoshiruri'); ?>">
         <?php if($is_in_upload_ui): ?>
-          <input type="button" id="emwi-cancel" class="button" value="<?php _e('取消','moedog'); ?>">
+          <input type="button" id="emwi-cancel" class="button" value="<?php _e('取消','hoshiruri'); ?>">
         <?php endif; ?>
       </div>
     </div><?php
@@ -173,7 +173,7 @@ function wp_ajax_add_external_media_without_import(){
         if($attachment = wp_prepare_attachment_for_js($info['id'])){
             wp_send_json_success($attachment);
         }else{
-            $info['error'] = __('相关JS加载失败','moedog');
+            $info['error'] = __('相关JS加载失败','hoshiruri');
             wp_send_json_error($info);
         }
     }else{
@@ -203,13 +203,13 @@ function sanitize_and_validate_input(){
     $width_str = $input['width'];
     $width_int = intval($width_str);
     if(!empty($width_str)&&$width_int<=0){
-        $input['error'] = __('图像大小不合法','moedog');
+        $input['error'] = __('图像大小不合法','hoshiruri');
         return $input;
     }
     $height_str = $input['height'];
     $height_int = intval($height_str);
     if(!empty($height_str)&&$height_int<=0){
-        $input['error'] = __('图像大小不合法','moedog');
+        $input['error'] = __('图像大小不合法','hoshiruri');
         return $input;
     }
     $input['width'] = $width_int;
@@ -232,7 +232,7 @@ function add_external_media_without_import(){
                     $input['mime-type'] = $response['headers']['content-type'];
                 }
             }
-            $input['error'] = __('无法获取图像大小','moedog');
+            $input['error'] = __('无法获取图像大小','hoshiruri');
             return $input;
         }
         if(empty($width)) $width = $image_size[0];

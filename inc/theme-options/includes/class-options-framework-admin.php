@@ -20,8 +20,8 @@ class Options_Framework_Admin {
     static function menu_settings() {
         $menu = array(
             'mode' => 'submenu',
-            'page_title' => __( '主题设置', 'moedog' ),
-            'menu_title' => __( '主题设置', 'moedog' ),
+            'page_title' => __( '主题设置', 'hoshiruri' ),
+            'menu_title' => __( '主题设置', 'hoshiruri' ),
             'capability' => 'edit_theme_options',
             'menu_slug' => 'options-framework',
             'parent_slug' => 'themes.php',
@@ -74,8 +74,8 @@ class Options_Framework_Admin {
                 <?php settings_fields( 'optionsframework' ); ?>
                 <?php Options_Framework_Interface::optionsframework_fields(); /* Settings */ ?>
                 <div id="optionsframework-submit">
-                    <input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( '保存设置', 'moedog' ); ?>" />
-                    <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( '恢复默认', 'moedog' ); ?>" onclick="return confirm( '<?php print esc_js( __( '您是否要恢复默认设置？', 'moedog' ) ); ?>' );" />
+                    <input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( '保存设置', 'hoshiruri' ); ?>" />
+                    <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( '恢复默认', 'hoshiruri' ); ?>" onclick="return confirm( '<?php print esc_js( __( '您是否要恢复默认设置？', 'hoshiruri' ) ); ?>' );" />
                     <div class="clear"></div>
                 </div>
                 </form>
@@ -87,7 +87,7 @@ class Options_Framework_Admin {
     }
     function validate_options( $input ) {
         if ( isset( $_POST['reset'] ) ) {
-            add_settings_error( 'options-framework', 'restore_defaults', __( '恢复默认设置成功', 'moedog' ), 'updated fade' );
+            add_settings_error( 'options-framework', 'restore_defaults', __( '恢复默认设置成功', 'hoshiruri' ), 'updated fade' );
             return $this->get_default_values();
         }
         $clean = array();
@@ -116,7 +116,7 @@ class Options_Framework_Admin {
         return $clean;
     }
     function save_options_notice() {
-        add_settings_error( 'options-framework', 'save_options', __( '保存成功', 'moedog' ), 'updated fade' );
+        add_settings_error( 'options-framework', 'save_options', __( '保存成功', 'hoshiruri' ), 'updated fade' );
     }
     function get_default_values() {
         $output = array();

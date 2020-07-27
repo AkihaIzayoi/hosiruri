@@ -55,12 +55,12 @@ function custom_password_form(){
         <div class="panel panel-pwd">
             <div class="panel-body text-center">
                 <img class="post-pwd" src="'.get_template_directory_uri().'/static/images/fingerprint.png"><br />
-                <h4>'.__('这是一篇受保护的文章，请输入阅读密码！','moedog').'</h4>
+                <h4>'.__('这是一篇受保护的文章，请输入阅读密码！','hoshiruri').'</h4>
                 <div class="input-group" id="respond">
                     <div class="input-group-addon"><i class="fa fa-key"></i></div>
-                    <p><input class="form-control" placeholder="'.__('输入阅读密码','moedog').'" name="post_password" id="'.$label.'" type="password" size="20"></p>
+                    <p><input class="form-control" placeholder="'.__('输入阅读密码','hoshiruri').'" name="post_password" id="'.$label.'" type="password" size="20"></p>
                 </div>
-                <div class="comment-form" style="margin-top:15px;"><button id="generate" class="btn btn-primary btn-pwd" name="Submit" type="submit">'.__('确认','moedog').'</button></div>
+                <div class="comment-form" style="margin-top:15px;"><button id="generate" class="btn btn-primary btn-pwd" name="Submit" type="submit">'.__('确认','hoshiruri').'</button></div>
             </div>
         </div>
     </form>';
@@ -160,8 +160,8 @@ function kratos_pages($range=5){
     if(!$max_page){$max_page=$wp_query->max_num_pages;}
     if($max_page>1){if(!$paged){$paged=1;}
     echo "<div class='text-center' id='page-footer'><ul class='pagination'>";
-        if($paged != 1) echo '<li><a href="'.get_pagenum_link(1).'" class="extend" title="'.__('首页','moedog').'">&laquo;</a></li>';
-        if($paged>1) echo '<li><a href="'.get_pagenum_link($paged-1).'" class="prev" title="'.__('上一页','moedog').'">&lt;</a></li>';
+        if($paged != 1) echo '<li><a href="'.get_pagenum_link(1).'" class="extend" title="'.__('首页','hoshiruri').'">&laquo;</a></li>';
+        if($paged>1) echo '<li><a href="'.get_pagenum_link($paged-1).'" class="prev" title="'.__('上一页','hoshiruri').'">&lt;</a></li>';
         if($max_page>$range){
             if($paged<$range){
                 for($i=1;$i<=($range+1);$i++){
@@ -190,8 +190,8 @@ function kratos_pages($range=5){
                 echo "><a href='".get_pagenum_link($i)."'>$i</a></li>";
             }
         }
-        if($paged<$max_page) echo '<li><a href="'.get_pagenum_link($paged+1).'" class="next" title="'.__('下一页','moedog').'">&gt;</a></li>';
-        if($paged!=$max_page) echo '<li><a href="'.get_pagenum_link($max_page).'" class="extend" title="'.__('尾页','moedog').'">&raquo;</a></li>';
+        if($paged<$max_page) echo '<li><a href="'.get_pagenum_link($paged+1).'" class="next" title="'.__('下一页','hoshiruri').'">&gt;</a></li>';
+        if($paged!=$max_page) echo '<li><a href="'.get_pagenum_link($max_page).'" class="extend" title="'.__('尾页','hoshiruri').'">&raquo;</a></li>';
         echo "</ul></div>";
     }
 }

@@ -22,7 +22,7 @@ $('.waifu-tool .fa-comments').click(function(){
     showHitokoto()
 });
 $('.waifu-tool .fa-info-circle').click(function(){
-    window.open('https://moedog.org/946.html')
+    window.open('https://hoshiruri.org/946.html')
 });
 $('.waifu-tool .fa-camera').click(function(){
     showMessage('照好了嘛，是不是很可爱呢？',5000);

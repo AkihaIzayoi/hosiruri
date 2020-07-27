@@ -32,7 +32,7 @@
             <div class="share-int">
                 <div class="qrcode"></div>
                 <!-- TODO qrcode -->
-                <p><?php _e('打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮','moedog'); ?></p>
+                <p><?php _e('打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮','hoshiruri'); ?></p>
             </div>
         </a>
     </div>
