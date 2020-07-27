@@ -31,11 +31,15 @@
         echo '#offcanvas-menu{background:rgba('.kratos_option('mobi_color').')}';
         if(kratos_option('head_mode')=='pic'){
             echo '.affix{top:61px}.kratos-cover.kratos-cover_2{background-image:url('.kratos_option('background_image').')}';
+            // echo '.kratos-cover.kratos-cover_2,.kratos-start.kratos-hero-2{height:'.kratos_option('background_image_height').'px}';
+            // TODO Pad模式下 @media(max-width>530px) 的时候，即竖屏的时候 背景图强调中间部分 看上去虽然还行  但是有待商榷
+
             if(kratos_option('background_image_mobi')) echo '@media(max-width:768px){.kratos-cover.kratos-cover_2{background-image:url('.kratos_option('background_image_mobi').')}}';
             if(kratos_option('mobi_mode')=='side') echo '@media(max-width:768px){#kratos-header-section{display:none}nav#offcanvas-menu{top:0;padding-top:40px}.kratos-cover .desc.desc2{margin-top:-55px}}';
         }
         if(kratos_option('background_mode')=='image') echo '@media(min-width:768px){.pagination>li>a{background-color:rgba(255,255,255,.8)}.kratos-hentry,.navigation div,.comments-area .comment-list li,#kratos-widget-area .widget,.comment-respond{background-color:rgba(253,253,253,.85)!important}.comment-list .children li{background-color:rgba(255,253,232,.7)!important}body.custom-background{background-image:url('.kratos_option('background_index_image').');background-size:cover;background-attachment:fixed}}';
         if(kratos_option('add_css')) echo kratos_option('add_css'); ?>
+        if(kratos_option('background_mode')=='color') echo 'body{background:'.kratos_option('background_index_color').'}'?>
     </style>
   </head>
     <?php flush(); ?>
@@ -70,4 +74,4 @@
                 <?php }else{ ?>
                 <div class="kratos-start kratos-hero"></div>
                 <?php } ?>
-                <div id="kratos-blog-post" <?php if(kratos_option('background_mode')=='color') echo 'style="background:'.kratos_option('background_index_color').'"'; ?>>
+                <div id="kratos-blog-post" <?php //if(kratos_option('background_mode')=='color') echo 'style="background:'.kratos_option('background_index_color').'"'; ?>>
